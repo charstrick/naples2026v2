@@ -1,0 +1,12 @@
+.session-time, .date-title,
+.session-time *, .date-title * {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  text-shadow: none !important;
+}
+span.mat-button-wrapper {
+padding: 0.5pc;
+}
