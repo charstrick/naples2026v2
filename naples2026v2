@@ -1,12 +1,36 @@
-.session-time, .date-title,
-.session-time *, .date-title * {
-  color: #000 !important;
-  -webkit-text-fill-color: #000 !important;
-  opacity: 1 !important;
-  filter: none !important;
-  mix-blend-mode: normal !important;
-  text-shadow: none !important;
+/* 1) Set solid black, scoped to just these blocks and their inline text */
+.session-time,
+.date-title {
+  color: #000; /* remove !important if you can control load order */
 }
-span.mat-button-wrapper {
-padding: 0.5pc;
+
+/* 2) Preserve link states but keep them black if desired */
+.session-time a,
+.session-time a:visited,
+.session-time a:hover,
+.session-time a:active,
+.date-title a,
+.date-title a:visited,
+.date-title a:hover,
+.date-title a:active {
+  color: #000;
+}
+
+/* 3) Only use this if WebKit is actually painting text lighter */
+.session-time,
+.date-title {
+  -webkit-text-fill-color: #000;
+}
+
+/* 4) If icons need to follow the text color, ensure they inherit */
+.session-time svg,
+.date-title svg {
+  fill: currentColor;
+  stroke: currentColor; /* if needed */
+}
+
+/* 5) Button wrapper: use rems and scope it so you don't affect all buttons sitewide */
+.session-time .mat-button-wrapper,
+.date-title .mat-button-wrapper {
+  padding: 0.5rem;
 }
